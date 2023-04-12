@@ -191,7 +191,7 @@ tiles_esri_attr <- "Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS,
 
 ## Initiate a new leaflet object
 m <- leaflet(width="800px", height="600px",
-             options = leafletOptions(maxZoom = 23))
+             options = leafletOptions(maxZoom = 17))
 
 m <- m %>% addTiles(tiles_esri_url, group="Satellite", attribution=tiles_esri_attr) %>% addTiles(group="Open Street Map") %>% addLayersControl(baseGroups = c("Satellite", "Open Street Map"), options = layersControlOptions(collapsed = FALSE))
 
