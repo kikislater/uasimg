@@ -166,7 +166,7 @@ cat("<tr><td>__Num&nbsp;images__:</td><td><span id='num_img'>", paste(unlist(cam
   
 cat("<tr><td>__Total&nbsp;file&nbsp;size__:</td><td><span id='size_mb'>", params$size_mb, "</span> MB</td></tr>", sep = "")
 
-cat("<tr><td>__Area__:</td><td><span id='area_acres'>", round(msq2acres(params$area_m2),2), " acres</span></td></tr>", sep = "")
+cat("<tr><td>__Area__:</td><td><span id='area_acres'>", round((params$area_m2),2), " m²</span></td></tr>", sep = "")
 
 cat("<tr><td>__Start__:</td><td><span id='dt_start'>", dt_range[1], "</span></td></tr>", sep = "")
 
@@ -179,7 +179,7 @@ if (!is.na(params$metadata$notes %>% null2na())) cat("<tr><td>__Notes__:</td><td
 cat("</table>")
 ```
 
-## Maps {.tabset}
+## Maps 
 
 ### Centers
 

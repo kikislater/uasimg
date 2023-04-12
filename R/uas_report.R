@@ -211,7 +211,7 @@ uas_report <- function(x, col = NULL, group_img = TRUE, thumbnails = FALSE, show
         ctr_ll <- c(mean(pts_ext[lon_idx]), mean(pts_ext[lat_idx]))
 
         ## Compute the Zoom level (use a minimum of 18)
-        zoom_lev <- min(18, ggmap::calc_zoom(lon = range( pts_ext[lon_idx]),
+        zoom_lev <- min(17, ggmap::calc_zoom(lon = range( pts_ext[lon_idx]),
                                              lat = range( pts_ext[lat_idx]),
                                              adjust=as.integer(-1)))
 
@@ -304,7 +304,7 @@ uas_report <- function(x, col = NULL, group_img = TRUE, thumbnails = FALSE, show
 
     ## Get the HTML report output filename
     if (is.null(output_file)) {
-      output_file_use <- paste0(fnbase, "_rpt.html")
+      output_file_use <- paste0("Report_", fnbase, ".html")
     } else {
       output_file_use <- output_file
     }
