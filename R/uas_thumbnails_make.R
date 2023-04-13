@@ -159,9 +159,9 @@ uas_thumbnails_make <- function(x, flt_idx = NULL, output_dir = NULL, tb_width =
     if (!quiet) message(yellow("Done."))
 
     ## Compute the file names of the thumbnail images. All thumbnails will be jpg, even if the orig is TIF
-    tb_fn <- tolower(file.path(output_dir_use,
+    tb_fn <- file.path(output_dir_use,
                                paste0(file_path_sans_ext(basename(all_img_fn)),
-                                      "_tb", all_img_suffixes, ".jpg")))
+                                      "_tb", all_img_suffixes, ".jpg"))
 
     ## Save the base names (minus the path) of the thumbnail files to return
     res[[names(x)[i]]] <- basename(tb_fn)
