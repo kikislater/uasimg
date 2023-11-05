@@ -38,6 +38,7 @@ function set_src(elmnt) {
 ```
 
 ```{css echo = FALSE}
+/* Additional styles for the flight report html output */
 h1.title {
   color: #305230;
   font-size:18px;
