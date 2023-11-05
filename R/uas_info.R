@@ -225,7 +225,7 @@ uas_info <- function(img_dirs, ext = NULL, alt_agl = NULL, fp = FALSE, fwd_overl
 
         ## Construct the cache file name based on the image dir and total size
         ## Keep only image files for the purposes of computing the total file size
-        dir_files <- list.files(img_dir, all.files = FALSE, full.names = TRUE, recursive=TRUE)
+        dir_files <- list.files(img_dir, all.files = FALSE, full.names = TRUE)
         dir_files <- dir_files[grepl(grep_pattern_use, dir_files, ignore.case=TRUE)]
         #dir_files <- dir_files[!grepl(".txt$|.bak$", dir_files)]
 
@@ -259,7 +259,7 @@ uas_info <- function(img_dirs, ext = NULL, alt_agl = NULL, fp = FALSE, fwd_overl
       ### (We assume all image files in the directory are from the same sensor, will not check)
       if (!quiet) message(yellow(paste0(" - Looking for image files", ext_msg)))
 
-      first_fn <- list.files(path=img_dir, full.names=TRUE, pattern=grep_pattern_use, ignore.case = TRUE, recursive=TRUE)[1]
+      first_fn <- list.files(path=img_dir, full.names=TRUE, pattern=grep_pattern_use, ignore.case = TRUE)[1]
 
       if (is.na(first_fn)) stop(paste0("Couldn't find any image files that match the pattern in ", img_dir))
 
@@ -372,7 +372,7 @@ uas_info <- function(img_dirs, ext = NULL, alt_agl = NULL, fp = FALSE, fwd_overl
         stop("exiftool could not create the csv file")
       }
 
-      # Import EXIF CSV.
+      # Import EXIF CSV
 
       exif_df <- read.csv(exif_csv_fn, stringsAsFactors=FALSE)
       if (is.null(exif_csv)) file.remove(exif_csv_fn)
